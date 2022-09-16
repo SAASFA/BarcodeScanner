@@ -20,7 +20,8 @@
         scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
         scanner.onFrameRead = (results) => {
           if (results[0]?.barcodeText !== undefined) {
-            alert(results[0]?.barcodeText);
+            //alert(results[0]?.barcodeText);
+window.location.href = "index.html?item=123&barcode="+results[0]?.barcodeText;
           }
 
           for (let result of results) {
